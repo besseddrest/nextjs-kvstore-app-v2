@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 
 export default function Form() {
   const { handleSubmit, register } = useForm({mode: 'onChange'});
-  
   const handleRegistration = (data) => console.log(data);
+
   return (
     <Layout>
       <form onSubmit={handleSubmit(handleRegistration)}>
