@@ -1,0 +1,57 @@
+[
+  {
+    "id": 2001,
+    "name": "vulf_metadata",
+    "owner": "jstratton",
+    "description": "Storing metadata for Vulfpeck songs",
+    "storage_type": "READONLY",
+    "size": 75,
+    "qps": {
+      "get": 2000,
+    },
+    "review_status": "NEW",
+    "cluster": null,
+    "partitions": null,
+    "admin": null,
+    "is_pii": false,
+  },
+  {
+    "id": 2002,
+    "name": "fav_musicians",
+    "owner": "jdart",
+    "description": "A list of favorite individual musiciian",
+    "storage_type": "MUTABLE",
+    "size": 150,
+    "ttl": 30,
+    "qps": {
+      "get": 30000,
+      "set":  100,
+      "del": 1
+    },
+    "review_status": "IN_PROGRESS",
+    "cluster": null, 
+    "partitions": null,
+    "admin": null,
+    "is_pii": false
+  },
+  {
+    "id": 2003,
+    "name": "my_bootstrap_dataset",
+    "owner": "hcabalic",
+    "description": "random key value pairs used in testing",
+    "storage_type": "BOOTSTRAP",
+    "size": 1000,
+    "ttl": 30,
+    "qps": {
+      "get": 10000,
+      "set":  100,
+      "del": 1
+    },
+    "review_status": "COMPLETED",
+    "cluster": null, 
+    "partitions": null,
+    "admin": null,
+    "is_pii": false,
+    "kafka_topic": "my first kakfa topic name"
+  }
+]

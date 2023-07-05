@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1001,
+    "name": "hcabalic",
+    "isAdmin": true
+  },
+  {
+    "id": 1002,
+    "name": "mnguyen",
+    "isAdmin": true
+  },
+  {
+    "id": 1003,
+    "name": "jdart",
+    "isAdmin": false
+  },
+  {
+    "id": 1004,
+    "name": "jstratton",
+    "isAdmin": false
+  },
+  {
+    "id": 1005,
+    "name": "cwong",
+    "isAdmin": false
+  },
+  {
+    "id": 1006,
+    "name": "tkatzman",
+    "isAdmin": false
+  },
+  {
+    "id": 1007,
+    "name": "wgoss",
+    "isAdmin": false
+  },
+  {
+    "id": 1008,
+    "name": "astanley",
+    "isAdmin": false
+  },
+  {
+    "id": 1009,
+    "name": "jdosik",
+    "isAdmin": false
+  }
+]
