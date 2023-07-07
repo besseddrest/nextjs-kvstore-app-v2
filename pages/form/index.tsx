@@ -1,5 +1,7 @@
 import Layout from '../../components/layout';
 import { useForm } from 'react-hook-form';
+import BasicInfo from './BasicInfo';
+import DatasetInfo from './DatasetInfo';
 
 export default function Form() {
   const { handleSubmit, register } = useForm({mode: 'onChange'});
@@ -7,9 +9,9 @@ export default function Form() {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit(handleRegistration)}>
-        <input {...register('userName')} type="text" placeholder="e.g. hcabalic" />
-        <input {...register('datasetName')} type="text" placeholder="e.g. my_dataset" />
+      <form>
+        <BasicInfo />
+        <DatasetInfo />
         <button type="submit">Submit Request</button>
       </form>
     </Layout>
