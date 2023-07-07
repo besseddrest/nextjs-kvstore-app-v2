@@ -10,7 +10,7 @@ export default function BasicInfo() {
         <input type="text"  name="name" placeholder="e.g. my_dataset" />
 
         <label htmlFor="description">Use Case Description</label>
-        <textarea name="description" cols={50} rows={100} placeholder="e.g. my_dataset" />
+        <textarea name="description" cols={50} rows={5} placeholder="e.g. my_dataset" />
       </div>
     </section>
   );
