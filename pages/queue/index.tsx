@@ -1,9 +1,11 @@
 import Layout from '../../components/layout';
-
+import RequestTable from './RequestTable';
+  
 export default function Queue() {
   return (
     <Layout>
-      <p>The Queue goes here</p>
+      <RequestTable display="user" />
+      <RequestTable display="admin" />
     </Layout>
   )
 }

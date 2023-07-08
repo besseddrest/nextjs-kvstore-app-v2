@@ -12,8 +12,7 @@
     "review_status": "NEW",
     "cluster": null,
     "partitions": null,
-    "admin": null,
-    "is_pii": false
+    "admin": null
   },
   {
     "id": 2002,
@@ -31,8 +30,7 @@
     "review_status": "IN_PROGRESS",
     "cluster": null, 
     "partitions": null,
-    "admin": null,
-    "is_pii": false
+    "admin": null
   },
   {
     "id": 2003,
@@ -44,14 +42,12 @@
     "ttl": 30,
     "qps": {
       "get": 10000,
-      "set":  100,
+      "set": 100,
       "del": 1
     },
     "review_status": "COMPLETED",
     "cluster": null, 
     "partitions": null,
-    "admin": null,
-    "is_pii": false,
-    "kafka_topic": "my first kakfa topic name"
+    "admin": null
   }
 ]
