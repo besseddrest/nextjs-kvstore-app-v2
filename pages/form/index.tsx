@@ -1,21 +1,24 @@
 import Layout from '../../components/layout';
-import { useForm } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import BasicInfo from './BasicInfo';
 import DatasetInfo from './DatasetInfo';
 import AdminInfo from './AdminInfo';
+import { DevTool } from '@hookform/devtools';
 
 export default function Form() {
-  const { handleSubmit, register } = useForm({mode: 'onChange'});
-  const handleRegistration = (data) => console.log(data);
-
+  const form = useForm();
+  const { register, control } = form;
   return (
     <Layout>
-      <form>
-        <BasicInfo />
-        <DatasetInfo />
-        <AdminInfo />
-        <button className="border" type="submit">Submit Request</button>
-      </form>
+      <FormProvider {...form}>
+        <form>
+          <BasicInfo />
+          <DatasetInfo />
+          <AdminInfo />
+          <button className="border" type="submit">Submit Request</button>
+        </form>
+        <DevTool control={control} />
+      </FormProvider>
     </Layout>
   )
 }

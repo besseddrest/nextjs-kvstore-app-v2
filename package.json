@@ -17,6 +17,7 @@
     "remark-html": "^15.0.1"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@types/node": "18.15.10",
     "@types/react": "18.0.30",
     "autoprefixer": "^10.4.14",
