@@ -4,7 +4,6 @@ export default function Header() {
   return (
     <header>
       <h1>KVStore App</h1>
-
       <nav className="header__nav">
         <ul>
           <li><Link href={`/form`}>Form</Link></li>

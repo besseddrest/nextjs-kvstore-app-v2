@@ -5,11 +5,32 @@ import DatasetInfo from './DatasetInfo';
 import AdminInfo from './AdminInfo';
 import { DevTool } from '@hookform/devtools';
 
-export default function Form() {
+export default function Form({ datasets, setDatasets }: any) {
   const form = useForm();
   const { register, control } = form;
+
+  function addDataset() {
+    const dataset = {
+      'id': 6969,
+      'name': 'test_success',
+      'owner': 'hcabalic',
+      'description': 'testing form submission',
+      'storage_type': 'READONLY',
+      'size': 10000, // GB
+      'qps': {
+        'get': 1234
+      },
+      'review_status': 'NEW',
+      'cluster': null, // cluster ID
+      'partitions': null,
+      'admin': null, // user ID or string?
+    }
+
+    setDatasets([...datasets, dataset]);
+  }
   return (
     <Layout>
+      <button className="border" type="button" onClick={addDataset}>Test Add Dataset</button>
       <FormProvider {...form}>
         <form>
           <BasicInfo />

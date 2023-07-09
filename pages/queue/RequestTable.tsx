@@ -1,15 +1,9 @@
-import datasets from '../../src/data/datasets.json';
 import Dataset from '../../src/interfaces/dataset';
 
-type ComponentProps = {
-  display: string;
-}
-export default function RequestTable({ display }: ComponentProps) {
+export default function RequestTable({ display, datasets }: { display: string, datasets: Dataset[]}) {
   let results: Dataset[] = display === 'user' 
     ? datasets.filter((item: Dataset) => item.owner === 'hcabalic') 
     : datasets;
-
-  console.log(display === 'user');
 
   return (
     <table>
