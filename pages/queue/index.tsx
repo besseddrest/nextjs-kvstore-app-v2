@@ -1,10 +1,10 @@
 import Layout from '../../components/layout';
 import RequestTable from './RequestTable';
-export default function Queue({ datasets }: any) {
+export default function Queue() {
   return (
     <Layout>
-      <RequestTable display="user" datasets={datasets} />
-      <RequestTable display="admin" datasets={datasets} />
+      <RequestTable display="user" />
+      <RequestTable display="admin" />
     </Layout>
   )
 }

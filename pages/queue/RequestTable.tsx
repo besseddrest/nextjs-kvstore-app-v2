@@ -1,7 +1,10 @@
+import { useDatasets } from '../../src/context/DatasetsContext';
 import Dataset from '../../src/interfaces/dataset';
 
-export default function RequestTable({ display, datasets }: { display: string, datasets: Dataset[]}) {
-  let results: Dataset[] = display === 'user' 
+export default function RequestTable({ display }: { display: string }) {
+  const { datasets } = useDatasets();
+
+  let results: Dataset[] | null = (datasets && display === 'user') 
     ? datasets.filter((item: Dataset) => item.owner === 'hcabalic') 
     : datasets;
 
@@ -15,7 +18,7 @@ export default function RequestTable({ display, datasets }: { display: string, d
         <th>Status</th>
       </tr>
       {
-        results.map((item: Dataset, i: number) => (
+        results && results.map((item: Dataset, i: number) => (
           <tr key={`dataset-${item.id}`}>
             <td>{ item.name }</td>
             <td>{ item.owner }</td>
