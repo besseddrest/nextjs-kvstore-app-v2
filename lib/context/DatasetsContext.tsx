@@ -1,14 +1,13 @@
 import Dataset from "../interfaces/dataset";
-import data from "../data/datasets.json";
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 type datasetsContextType = {
-  datasets: Dataset[] | null;
+  datasets: Dataset[];
   updateDatasets: (entry: Dataset) => void;
 }
 
 const datasetsContextDefaultValues: datasetsContextType = {
-  datasets: null,
+  datasets: [],
   updateDatasets: (entry: Dataset) => {},
 }
 
@@ -23,8 +22,13 @@ type Props = {
 }
 
 export function DatasetsProvider({ children }: Props) {
-  const [datasets, setDatasets] = useState<Dataset[]>(data);
+  const [datasets, setDatasets] = useState<Dataset[]>([]);
   
+  // TODO why does Form component always make fetch call?
+  useEffect(() => {
+    getDatasets('./data/datasets.json');
+  }, []);
+
   const updateDatasets = (entry: Dataset) => {
     setDatasets([...datasets, entry]);
   }
@@ -33,6 +37,16 @@ export function DatasetsProvider({ children }: Props) {
     datasets,
     updateDatasets,
   }
+
+  async function getDatasets(url: string) {
+    const results = await fetch(url)
+      .then(results => results.json())
+      .then(results => setDatasets(results))
+      .catch(err => console.log(err));
+
+    return results;
+  }
+
   return (
     <>
       <DatasetsContext.Provider value={value}>

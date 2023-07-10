@@ -14,7 +14,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.8",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "swr": "^2.2.0"
   },
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",

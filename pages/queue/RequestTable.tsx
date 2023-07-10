@@ -1,5 +1,5 @@
-import { useDatasets } from '../../src/context/DatasetsContext';
-import Dataset from '../../src/interfaces/dataset';
+import { useDatasets } from '../../lib/context/DatasetsContext';
+import Dataset from '../../lib/interfaces/dataset';
 
 export default function RequestTable({ display }: { display: string }) {
   const { datasets } = useDatasets();
@@ -10,24 +10,28 @@ export default function RequestTable({ display }: { display: string }) {
 
   return (
     <table>
-      <tr>
-        <th>Dataset Name</th>
-        <th>Owner</th>
-        <th>Storage Type</th>
-        <th>Data Size</th>
-        <th>Status</th>
-      </tr>
-      {
-        results && results.map((item: Dataset, i: number) => (
-          <tr key={`dataset-${item.id}`}>
-            <td>{ item.name }</td>
-            <td>{ item.owner }</td>
-            <td>{ item.storage_type }</td>
-            <td>{ item.size }</td>
-            <td>{ item.review_status }</td>
-          </tr>
-        ))
-      }
+      <thead>
+        <tr>
+          <th>Dataset Name</th>
+          <th>Owner</th>
+          <th>Storage Type</th>
+          <th>Data Size</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          results && results.map((item: Dataset, i: number) => (
+            <tr key={`dataset-${item.id}`}>
+              <td>{ item.name }</td>
+              <td>{ item.owner }</td>
+              <td>{ item.storage_type }</td>
+              <td>{ item.size }</td>
+              <td>{ item.review_status }</td>
+            </tr>
+          ))
+        }
+      </tbody>  
     </table>
   )
 }

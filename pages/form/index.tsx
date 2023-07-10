@@ -4,9 +4,10 @@ import BasicInfo from './BasicInfo';
 import DatasetInfo from './DatasetInfo';
 import AdminInfo from './AdminInfo';
 import { DevTool } from '@hookform/devtools';
-import { DatasetsProvider, useDatasets } from '../../src/context/DatasetsContext';
+import { DatasetsProvider, useDatasets } from '../../lib/context/DatasetsContext';
 
 export default function Form() {
+  // TODO: replace test add dataset with form values
   const dataset = {
     'id': 6969,
     'name': 'test_success',
@@ -22,7 +23,7 @@ export default function Form() {
     'partitions': null,
     'admin': null, // user ID or string?
   }
-  const { updateDatasets } = useDatasets(dataset);
+  const { updateDatasets } = useDatasets();
   const form = useForm();
   const { register, control } = form;
 
