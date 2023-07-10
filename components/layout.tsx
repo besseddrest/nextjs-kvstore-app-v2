@@ -15,7 +15,7 @@ export default function Layout({
 }) {
   
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -37,7 +37,7 @@ export default function Layout({
           <Link href="/">← Back to home</Link>
         </div>
       )}
-      <main>{children}</main>
+      <main className={styles.container}>{children}</main>
     </div>
   )
 }

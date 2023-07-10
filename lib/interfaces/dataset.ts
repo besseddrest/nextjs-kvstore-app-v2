@@ -8,11 +8,9 @@ export default interface Dataset {
   description: string,
   storage_type: string,
   size: number // GB
-  qps: {
-    get: number,
-    set?: number,
-    del?: number,
-  },
+  qps_get: number,
+  qps_set?: number,
+  qps_del?: number,
   review_status: string,
   cluster: number | null, // cluster ID
   partitions: number | null,

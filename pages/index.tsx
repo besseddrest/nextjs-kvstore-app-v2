@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 export default function Home({ datasets, setDatasets }: any) {
 
@@ -11,16 +12,24 @@ export default function Home({ datasets, setDatasets }: any) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Software Engineer in Frontend</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+      <section>
+        <p className="mb-4">
+          This personal project is an improved version (v2.0) of the original KVStore App that I worked on as a Software Engineer at Pinterest from 2020-23.
+          Additionally, this proposed version allows me to share it with you on my portfolio/github.
         </p>
-        <button type="button" className="btn btn-blue">Test</button>
+        <p>v2.0 contains the following improvements:</p>
+        <ul className="list-disc ml-8 mb-4">
+          <li>NextJS</li>
+          <li>Replace Redux with React Hooks</li>
+          <li>Replace Formik with React Hook Form</li>
+          <li>TailwindCSS</li>
+          <li>Improved Typescript</li>
+        </ul>
+        <p className="mb-4"><a href="https://github.com/besseddrest/nextjs-kvstore-app-v2" title="KVStore App v2 on Github" rel="noopener" target="_blank">Click here</a> to see the repository on Github.</p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section className="flex justify-center">
+        <Link className="bg-red-500 hover:bg-red-700 text-white font-bold mx-4 py-2 px-4 rounded" href={`/request`}>Request a Dataset</Link>
+        <Link className="bg-red-500 hover:bg-red-700 text-white font-bold mx-4 py-2 px-4 rounded" href={`/queue`}>My Dataset Requests</Link>
       </section>
     </Layout>
   )

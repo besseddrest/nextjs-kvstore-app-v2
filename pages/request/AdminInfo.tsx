@@ -24,8 +24,8 @@ export default function AdminInfo() {
         </div>
       </div>      
       
-      <label className="block" htmlFor="reviewStatus">Review Status</label>
-      <select {...register("reviewStatus")} className="border" name="reviewStatus" title="Review Status">
+      <label className="block" htmlFor="review_status">Review Status</label>
+      <select {...register("review_status")} className="border" name="review_status" title="Review Status">
         <option value="NEW">New</option>
         <option value="IN_REVIEW">In Review</option>
         <option value="NEEDS_INFO">Needs Info</option>

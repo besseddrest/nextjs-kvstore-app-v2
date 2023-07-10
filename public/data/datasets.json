@@ -6,9 +6,7 @@
     "description": "Storing metadata for Vulfpeck songs",
     "storage_type": "READONLY",
     "size": 75,
-    "qps": {
-      "get": 2000
-    },
+    "qps_get": 2000,
     "review_status": "NEW",
     "cluster": null,
     "partitions": null,
@@ -22,11 +20,9 @@
     "storage_type": "MUTABLE",
     "size": 150,
     "ttl": 30,
-    "qps": {
-      "get": 30000,
-      "set":  100,
-      "del": 1
-    },
+    "qps_get": 30000,
+    "qps_set":  100,
+    "qps_del": 1,
     "review_status": "IN_PROGRESS",
     "cluster": null, 
     "partitions": null,
@@ -40,11 +36,9 @@
     "storage_type": "BOOTSTRAP",
     "size": 1000,
     "ttl": 30,
-    "qps": {
-      "get": 10000,
-      "set": 100,
-      "del": 1
-    },
+    "qps_get": 10000,
+    "qps_set": 100,
+    "qps_del": 1,
     "review_status": "COMPLETED",
     "cluster": null, 
     "partitions": null,

@@ -1,4 +1,4 @@
-# KVStore App 2.0 (WIP)
+# KVStore App v2 (WIP)
 
 A re-creation of the KVStore App that I built for Data Engineering at Pinterest, with improvements.
 

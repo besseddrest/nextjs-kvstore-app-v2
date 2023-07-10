@@ -5,44 +5,28 @@ import DatasetInfo from './DatasetInfo';
 import AdminInfo from './AdminInfo';
 import { DevTool } from '@hookform/devtools';
 import { DatasetsProvider, useDatasets } from '../../lib/context/DatasetsContext';
+import Dataset from '../../lib/interfaces/dataset';
 
 export default function Form() {
-  // TODO: replace test add dataset with form values
-  const dataset = {
-    'id': 6969,
-    'name': 'test_success',
-    'owner': 'hcabalic',
-    'description': 'testing form submission',
-    'storage_type': 'READONLY',
-    'size': 10000, // GB
-    'qps': {
-      'get': 1234
-    },
-    'review_status': 'NEW',
-    'cluster': null, // cluster ID
-    'partitions': null,
-    'admin': null, // user ID or string?
-  }
   const { updateDatasets } = useDatasets();
-  const form = useForm();
-  const { register, control } = form;
+  const form = useForm<Dataset>();
+  const { register, control, handleSubmit } = form;
 
-  function handleClick() {
-    updateDatasets(dataset);
+  function onSubmit(values: Dataset) {
+    updateDatasets(values);
   }
 
   return (
     <Layout>
       <DatasetsProvider>
-        <button className="border" type="button" onClick={handleClick}>Test Add Dataset</button>
         <FormProvider {...form}>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <BasicInfo />
             <DatasetInfo />
             <AdminInfo />
             <button className="border" type="submit">Submit Request</button>
           </form>
-          <DevTool control={control} />
+          {/* <DevTool control={control} /> */}
         </FormProvider>
       </DatasetsProvider>
     </Layout>
