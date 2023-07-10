@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Header from './header';
 
 const name = 'Harold Cabalic'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'KVStore App v2'
 
 export default function Layout({
   children,
