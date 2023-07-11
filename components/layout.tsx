@@ -32,12 +32,14 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header></Header>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
-      <main className={styles.container}>{children}</main>
+      <main className={styles.container}>
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link className="text-black" href="/">← Back to home</Link>
+          </div>
+        )}
+        {children}
+      </main>
     </div>
   )
 }
