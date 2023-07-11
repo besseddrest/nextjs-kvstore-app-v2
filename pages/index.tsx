@@ -28,8 +28,8 @@ export default function Home({ datasets, setDatasets }: any) {
         <p className="mb-4"><a href="https://github.com/besseddrest/nextjs-kvstore-app-v2" title="KVStore App v2 on Github" rel="noopener" target="_blank">Click here</a> to see the repository on Github.</p>
       </section>
       <section className="flex justify-center">
-        <Link className="bg-red-500 hover:bg-red-700 text-white font-bold mx-4 py-2 px-4 rounded" href={`/request`}>Request a Dataset</Link>
-        <Link className="bg-red-500 hover:bg-red-700 text-white font-bold mx-4 py-2 px-4 rounded" href={`/queue`}>My Dataset Requests</Link>
+        <Link className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" href={`/request`}>Request a Dataset</Link>
+        <Link className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" href={`/queue`}>My Dataset Requests</Link>
       </section>
     </Layout>
   )

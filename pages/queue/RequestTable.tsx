@@ -8,7 +8,7 @@ export default function RequestTable({ display }: { display: string }) {
     ? datasets.filter((item: Dataset) => item.owner === 'hcabalic') 
     : datasets;
 
-  function rowClasses(isDark: boolean) {
+  function rowClasses(isDark: boolean): string {
     return isDark 
       ? "border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700" 
       : "bg-white border-b dark:bg-gray-900 dark:border-gray-700";
@@ -29,7 +29,7 @@ export default function RequestTable({ display }: { display: string }) {
         <tbody>
           {
             results && results.map((item: Dataset, i: number) => (
-              <tr className={ i % 2 > 0 ? rowClasses(false) : rowClasses(true) }key={`dataset-${item.id}`}>
+              <tr className={ i % 2 > 0 ? rowClasses(true) : rowClasses(false) }key={`dataset-${item.id}`}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{ item.name }</th>
                 <td className="px-6 py-4">{ item.owner }</td>
                 <td className="px-6 py-4">{ item.storage_type }</td>
