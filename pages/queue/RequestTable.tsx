@@ -16,8 +16,8 @@ export default function RequestTable({ display }: { display: string }) {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-12">
-      <table className="z-10 w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table className="request-queue">
+        <thead className="request-queue__headers">
           <tr>
             <th scope="col" className="px-6 py-3">ID</th>
             <th scope="col" className="px-6 py-3">Dataset Name</th>
@@ -43,6 +43,5 @@ export default function RequestTable({ display }: { display: string }) {
         </tbody>  
       </table>
     </div>
-
   )
 }

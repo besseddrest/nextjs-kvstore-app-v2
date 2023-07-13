@@ -14,7 +14,7 @@ export default function Home({ datasets, setDatasets }: any) {
       </Head>
       <section>
         <p className="mb-4">
-          This personal project is an improved version (v2.0) of the original KVStore App that I worked on as a Software Engineer at Pinterest from 2020-23.
+          This personal project is an improved version (v2.0) of the original KVStore App that I developed as a Software Engineer at Pinterest from 2020-23.
           Additionally, this proposed version allows me to share it with you on my portfolio/github.
         </p>
         <p>v2.0 contains the following improvements:</p>
