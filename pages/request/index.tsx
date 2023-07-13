@@ -6,21 +6,33 @@ import AdminInfo from './AdminInfo';
 import { DevTool } from '@hookform/devtools';
 import { DatasetsProvider, useDatasets } from '../../lib/context/DatasetsContext';
 import Dataset from '../../lib/interfaces/dataset';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Form() {
-  const { updateDatasets } = useDatasets();
+  const { datasets, updateDatasets } = useDatasets();
+  const [ newId, setNewId ] = useState<number>(0);
   const form = useForm<Dataset>();
   const { register, control, handleSubmit } = form;
+  const router = useRouter();
 
   function onSubmit(values: Dataset) {
     updateDatasets(values);
+    router.push('/queue');
   }
+
+  useEffect(() => {
+    if (datasets && datasets.length > 0) {
+      setNewId(datasets[datasets.length - 1].id + 1);
+    }
+  }, [datasets]);
 
   return (
     <Layout>
       <DatasetsProvider>
         <FormProvider {...form}>
           <form onSubmit={handleSubmit(onSubmit)}>
+            <input {...register("id", { valueAsNumber: true })} type="hidden" name="id" value={newId} />
             <BasicInfo />
             <DatasetInfo />
             <AdminInfo />

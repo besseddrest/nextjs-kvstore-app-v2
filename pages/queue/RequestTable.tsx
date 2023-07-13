@@ -16,9 +16,10 @@ export default function RequestTable({ display }: { display: string }) {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-12">
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <table className="z-10 w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
+            <th scope="col" className="px-6 py-3">ID</th>
             <th scope="col" className="px-6 py-3">Dataset Name</th>
             <th scope="col" className="px-6 py-3">Owner</th>
             <th scope="col" className="px-6 py-3">Storage Type</th> 
@@ -30,6 +31,7 @@ export default function RequestTable({ display }: { display: string }) {
           {
             results && results.map((item: Dataset, i: number) => (
               <tr className={ i % 2 > 0 ? rowClasses(true) : rowClasses(false) }key={`dataset-${item.id}`}>
+                <td className="px-6 py-4">{ item.id }</td>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{ item.name }</th>
                 <td className="px-6 py-4">{ item.owner }</td>
                 <td className="px-6 py-4">{ item.storage_type }</td>
